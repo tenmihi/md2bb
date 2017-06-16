@@ -1,6 +1,8 @@
 # Md2SteamBBCode
 
-Convert [Steam](http://store.steampowered.com) review (or guide) written by markdown to [Steam BB Code Format](http://steamcommunity.com/comment/WorkshopItem/formattinghelp).
+> Convert [Steam](http://store.steampowered.com) review (or guide) written by markdown to [Steam BB Code Format](http://steamcommunity.com/comment/WorkshopItem/formattinghelp).
+
+[![npm version](https://badge.fury.io/js/md2steam-bbcode.svg)](https://badge.fury.io/js/md2steam-bbcode)
 
 ## Installation
 
