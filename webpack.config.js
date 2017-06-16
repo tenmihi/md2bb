@@ -1,9 +1,14 @@
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = {
   context: __dirname + '/src',
   entry: ['./js/core.js'],
+  target: 'node',
   output: {
     path: __dirname,
-    filename: "./index.js"
+    filename: "./index.js",
+    library: 'md2steam-bbcode',
+    libraryTarget: 'umd'
   },
   module: {
     loaders: [
@@ -24,5 +29,8 @@ module.exports = {
         },
       }
     ]
-  }
+  },
+  externals: [
+    nodeExternals()
+  ]
 }
