@@ -12,7 +12,7 @@ $ npm install md2steam-bbcode
 
 ```js
 var md2SteamBBCode = require('Md2SteamBBCode');
-console.log(md2SteamBBCode('* Markdown *'));
+console.log(md2SteamBBCode('**Markdown**'));
 // OUTPUT: [b]Markdown[/b]
 ```
 
