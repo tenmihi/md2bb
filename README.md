@@ -1,4 +1,4 @@
-# Md2SteamBBCode
+# md2steam-bbcode
 
 > Convert [Steam](http://store.steampowered.com) review (or guide) written by markdown to [Steam BB Code Format](http://steamcommunity.com/comment/WorkshopItem/formattinghelp).
 
