@@ -22,7 +22,7 @@ console.log(md2SteamBBCode('**Markdown**'));
 
 - Write steam review (and guide) more easily
 
-## author
+## Author
 
 tenmihi
 
