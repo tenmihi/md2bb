@@ -28,40 +28,82 @@ About Steam BBCode format is [here](http://steamcommunity.com/comment/WorkshopIt
 
 ### Italic
 
-` *string* => [i]string[/i] `
+```
+# markdown
+*string*
+
+# bbcode
+[i]string[/i]
+```
 
 ### Bold
 
-` **string** => [b]string[/b] `
+```
+# markdown
+**string**
+
+# bbcode
+[b]string[/b]
+```
 
 ### Strike
 
-` ~~string~~ => [strike]string[/strike] `
+```
+# markdown
+~~string~~
+
+# bbcode
+[strike]string[/strike]
+```
 
 ### Link
 
-` [linkname](example.com) => [url=example.com]linkname[/url] `
+```
+# markdown
+[linkname](example.com)
+
+# bbcode
+[url=example.com]linkname[/url]
+```
 
 ### Code
 
-`` `string` => [code]string[/code] ``
+```
+# markdown
+`string`
+
+# bbcode
+[code]string[/code]
+```
 
 ### Quote
 
-`>string => [quote]string[/quote]`
+```
+# markdown
+>string
+
+# bbcode
+[quote]string[/quote]
+```
 
 with author
 
-`>[tenmihi]string => [quote=tenmihi]string[/quote]`
+```
+# markdown
+>[tenmihi]string
+
+# bbcode
+[quote=tenmihi]string[/quote]
+```
 
 ### Listitem
 
 ```
+# markdown
 * itemA
 * itemB
 
-=>
-
+# bbcode
 [list]
   [*] itemA
   [*] itemB
@@ -71,11 +113,11 @@ with author
 with order
 
 ```
+# markdown
 1. itemA
 2. itemB
 
-=>
-
+# bbcode
 [olist]
   [*] itemA
   [*] itemB
