@@ -56,7 +56,7 @@ renderer.blockquote = function (text) {
 
 // Code
 renderer.codespan = function (string) {
-  return `[code]${string}[/code]\n`;
+  return `[code]${string}[/code]`;
 };
 
 const Md2SteamBBCode = function (text) {
