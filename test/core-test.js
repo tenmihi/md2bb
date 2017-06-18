@@ -12,7 +12,11 @@ describe("md2bb", function() {
   });
 
   it("strike", function() {
-    assert.equal('[s]test[/s]', Md2SteamBBCode('~~test~~'));
+    assert.equal('[strike]test[/strike]', Md2SteamBBCode('~~test~~'));
+  });
+
+  it("link", function() {
+    assert.equal('[url=example.com]link[/url]', Md2SteamBBCode('[link](example.com)'));
   });
 
   it("list", function() {
