@@ -59,8 +59,6 @@ renderer.codespan = function (string) {
   return `[code]${string}[/code]`;
 };
 
-const Md2SteamBBCode = function (text) {
+module.exports = function (text) {
   return Marked(text, { renderer });
 };
-
-export default Md2SteamBBCode;
