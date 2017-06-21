@@ -2,19 +2,19 @@
 
 > Convert [Steam](http://store.steampowered.com) review (or guide) written by markdown to [Steam BB Code Format](http://steamcommunity.com/comment/WorkshopItem/formattinghelp).
 
-[![npm version](https://badge.fury.io/js/md2steam-bbcode.svg)](https://badge.fury.io/js/md2steam-bbcode)
+[![npm version](https://badge.fury.io/js/md2bb.svg)](https://badge.fury.io/js/md2bb)
 
 ## Installation
 
 ```console
-$ npm install md2steam-bbcode
+$ npm install md2bb
 ```
 
 ## Usage
 
 ```js
-var md2SteamBBCode = require('Md2SteamBBCode');
-console.log(md2SteamBBCode('**Markdown**'));
+var md2bb = require('md2bb');
+console.log(md2bb('**Markdown**'));
 // OUTPUT: [b]Markdown[/b]
 ```
 
