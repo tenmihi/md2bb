@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel-register test/*.js",
     "build": "./node_modules/.bin/webpack -p",
-    "bt": "npm run build && npm run test",
+    "start": "npm run build && npm run test",
     "watch": "./node_modules/.bin/webpack --watch"
   },
   "author": "tenmihi <tenmihi@gmail.com>",
@@ -28,6 +28,6 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "marked": "^0.3.6"
+    "showdown": "^1.7.1"
   }
 }
