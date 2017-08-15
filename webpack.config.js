@@ -2,7 +2,7 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   context: __dirname + '/src',
-  entry: ['./js/core.js'],
+  entry: ['./js/md2bb.js'],
   target: 'node',
   output: {
     path: __dirname,
@@ -20,6 +20,7 @@ module.exports = {
           presets: ['es2015']
         }
       },
+      /*
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -28,6 +29,7 @@ module.exports = {
           configFile: './.eslintrc.json'
         },
       }
+      */
     ]
   },
   externals: [

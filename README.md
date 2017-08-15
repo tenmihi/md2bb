@@ -1,6 +1,6 @@
 # md2bb
 
-> Convert [Steam](http://store.steampowered.com) review (or guide) written by markdown to [Steam BB Code Format](http://steamcommunity.com/comment/WorkshopItem/formattinghelp).
+> [Steam BB Code](http://steamcommunity.com/comment/WorkshopItem/formattinghelp). Text written by markdown like syntax.
 
 [![npm version](https://badge.fury.io/js/md2bb.svg)](https://badge.fury.io/js/md2bb)
 
@@ -14,7 +14,7 @@ $ npm install md2bb
 
 ```js
 var md2bb = require('md2bb');
-console.log(md2bb('**Markdown**'));
+console.log(md2bb.parse('**Markdown**'));
 // OUTPUT: [b]Markdown[/b]
 ```
 
@@ -25,6 +25,16 @@ console.log(md2bb('**Markdown**'));
 ## Syntax
 
 About Steam BBCode format is [here](http://steamcommunity.com/comment/WorkshopItem/formattinghelp).
+
+### Spoiler
+
+```
+# markdown
+~~string~~
+
+# bbcode
+[spoiler]string[/spoiler]
+```
 
 ### Italic
 
@@ -50,10 +60,20 @@ About Steam BBCode format is [here](http://steamcommunity.com/comment/WorkshopIt
 
 ```
 # markdown
-~~string~~
+~string~
 
 # bbcode
 [strike]string[/strike]
+```
+
+### UnderLine
+
+```
+# markdown
+_string_
+
+# bbcode
+[u]string[/u]
 ```
 
 ### Link
@@ -76,11 +96,21 @@ About Steam BBCode format is [here](http://steamcommunity.com/comment/WorkshopIt
 [code]string[/code]
 ```
 
+### Noparse
+
+```
+# markdown
+``string``
+
+# bbcode
+[noparse]string[/noparse]
+```
+
 ### Quote
 
 ```
 # markdown
->string
+> string
 
 # bbcode
 [quote]string[/quote]
@@ -90,7 +120,7 @@ with author
 
 ```
 # markdown
->[tenmihi]string
+>[tenmihi] string
 
 # bbcode
 [quote=tenmihi]string[/quote]
@@ -123,14 +153,6 @@ with order
   [*] itemB
 [/olist]
 ```
-
-### Spoiler
-
-Not supported, will be supported soon.
-
-### Noparse
-
-Not supported, will be supported soon.
 
 ## Author
 

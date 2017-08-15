@@ -1,10 +1,10 @@
 {
   "name": "md2bb",
-  "version": "0.0.5",
-  "description": "markdown to steam-bbcode converter",
+  "version": "0.1.0",
+  "description": "steam-bbcode written by markdown like syntax",
   "main": "./index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers js:babel-register test/*.js",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register test/md2bb/*.js",
     "build": "./node_modules/.bin/webpack -p",
     "start": "npm run build && npm run test",
     "watch": "./node_modules/.bin/webpack --watch"
@@ -26,8 +26,5 @@
     "mocha": "^3.4.2",
     "webpack": "^2.6.1",
     "webpack-node-externals": "^1.6.0"
-  },
-  "dependencies": {
-    "showdown": "^1.7.1"
   }
 }
