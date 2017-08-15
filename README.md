@@ -26,6 +26,16 @@ console.log(md2bb.parse('**Markdown**'));
 
 About Steam BBCode format is [here](http://steamcommunity.com/comment/WorkshopItem/formattinghelp).
 
+### Header
+
+```
+# markdown
+# string
+
+# bbcode
+[h1]string[/h1]
+```
+
 ### Spoiler
 
 ```
