@@ -11,11 +11,11 @@ describe('md2bb', function() {
 
   describe(('when text has only one tag'), function() {
 
-    it("em can parse", function() {
+    it("italic can parse", function() {
       assert.equal('[i]test[/i]', md2bb.parse('*test*'));
     });
 
-    it("strong can parse", function() {
+    it("bold can parse", function() {
       assert.equal('[b]test[/b]', md2bb.parse('**test**'));
     });
 

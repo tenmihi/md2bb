@@ -11,7 +11,7 @@ class Md2bb extends Replacer {
         replacement: '[b]$2[/b]',
       },
       {
-        name: 'emphasis',
+        name: 'italic',
         regex: /(\*)(.*?)\1/g,
         replacement: '[i]$2[/i]',
       },

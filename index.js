@@ -114,7 +114,7 @@ var Md2bb = function (_Replacer) {
       regex: /(\*\*)(.*?)\1/g,
       replacement: '[b]$2[/b]'
     }, {
-      name: 'emphasis',
+      name: 'italic',
       regex: /(\*)(.*?)\1/g,
       replacement: '[i]$2[/i]'
     }, {
