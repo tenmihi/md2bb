@@ -1,7 +1,7 @@
 import assert from 'assert';
 
-import md2bb_import from '../../src/js/md2bb.js';
-const md2bb_require = require('../../src/js/md2bb.js');
+import md2bb_import from '../../index.js';
+const md2bb_require = require('../../index.js');
 
 describe("when use md2bb", function() {
 

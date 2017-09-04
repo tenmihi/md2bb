@@ -1,10 +1,10 @@
-import Replacer from './replacer.js'
+import Parser from 'simple-parser'
 
-class Md2bb extends Replacer {
+export default class Md2bb extends Parser {
   constructor () {
-    super();
+    super()
 
-    let rules = [
+    this.setRules([
       {
         name: 'bold',
         regex: /(\*\*)(.*?)\1/g,
@@ -85,10 +85,6 @@ class Md2bb extends Replacer {
         regex: /\n\[\/ulist\][ ]?\[ulist\]/g,
         replacement:'',
       },
-    ]
-
-    super.setRules(rules)
+    ])
   }
 }
-
-export default Md2bb

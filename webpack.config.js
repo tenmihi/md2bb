@@ -1,38 +1,30 @@
-const nodeExternals = require('webpack-node-externals');
+const path = require('path')
 
 module.exports = {
-  context: __dirname + '/src',
-  entry: ['./js/md2bb.js'],
-  target: 'node',
+  cache: true,
+  entry: 'md2bb.js',
   output: {
-    path: __dirname,
+    path: path.resolve(__dirname, ''),
     filename: "./index.js",
-    library: 'md2steam-bbcode',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  resolve: {
+    extensions: [ '.js', ],
+    modules: [
+      path.resolve(__dirname, 'src/js'),
+      'node_modules',
+    ],
+    descriptionFiles: ['package.json'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
       },
-      /*
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-        query: {
-          configFile: './.eslintrc.json'
-        },
-      }
-      */
     ]
   },
-  externals: [
-    nodeExternals()
-  ]
+  stats: "detailed",
 }

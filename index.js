@@ -3,10 +3,10 @@
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
-	else if(typeof exports === 'object')
-		exports["md2steam-bbcode"] = factory();
-	else
-		root["md2steam-bbcode"] = factory();
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -43,9 +43,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -73,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -87,11 +84,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+var _simpleParser = __webpack_require__(1);
 
-var _replacer = __webpack_require__(2);
-
-var _replacer2 = _interopRequireDefault(_replacer);
+var _simpleParser2 = _interopRequireDefault(_simpleParser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101,15 +96,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Md2bb = function (_Replacer) {
-  _inherits(Md2bb, _Replacer);
+var Md2bb = function (_Parser) {
+  _inherits(Md2bb, _Parser);
 
   function Md2bb() {
     _classCallCheck(this, Md2bb);
 
     var _this = _possibleConstructorReturn(this, (Md2bb.__proto__ || Object.getPrototypeOf(Md2bb)).call(this));
 
-    var rules = [{
+    _this.setRules([{
       name: 'bold',
       regex: /(\*\*)(.*?)\1/g,
       replacement: '[b]$2[/b]'
@@ -173,14 +168,12 @@ var Md2bb = function (_Replacer) {
       name: 'ul_list_fix',
       regex: /\n\[\/ulist\][ ]?\[ulist\]/g,
       replacement: ''
-    }];
-
-    _get(Md2bb.prototype.__proto__ || Object.getPrototypeOf(Md2bb.prototype), 'setRules', _this).call(_this, rules);
+    }]);
     return _this;
   }
 
   return Md2bb;
-}(_replacer2.default);
+}(_simpleParser2.default);
 
 exports.default = Md2bb;
 
@@ -188,59 +181,7 @@ exports.default = Md2bb;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(0);
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Replacer = function () {
-  function Replacer() {
-    _classCallCheck(this, Replacer);
-
-    this.rules = [];
-  }
-
-  _createClass(Replacer, [{
-    key: "setRules",
-    value: function setRules(rules) {
-      this.rules = rules;
-    }
-  }, {
-    key: "reg_match",
-    value: function reg_match(reg, text) {
-      var reg_exp = new RegExp(reg);
-      return reg_exp.exec(text);
-    }
-  }, {
-    key: "parse",
-    value: function parse(text) {
-      this.rules.forEach(function (_ref) {
-        var regex = _ref.regex,
-            replacement = _ref.replacement;
-
-        text = text.replace(regex, replacement);
-      });
-      return text;
-    }
-  }]);
-
-  return Replacer;
-}();
-
-exports.default = Replacer;
+!function(e,t){if(true)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var n=t();for(var r in n)("object"==typeof exports?exports:e)[r]=n[r]}}(this,function(){return function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),u=function(){function e(){r(this,e),this.rules=[]}return o(e,[{key:"setRules",value:function(e){this.rules=e}},{key:"reg_match",value:function(e,t){return new RegExp(e).exec(t)}},{key:"parse",value:function(e){return this.rules.forEach(function(t){var n=t.regex,r=t.replacement;e=e.replace(n,r)}),e}}]),e}();t.default=u}])});
 
 /***/ })
 /******/ ]);

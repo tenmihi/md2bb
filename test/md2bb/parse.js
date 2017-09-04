@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Md2bb from '../../src/js/md2bb.js';
+import Md2bb from '../../index.js';
 
 describe('md2bb', function() {
 
