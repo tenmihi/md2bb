@@ -1,6 +1,6 @@
 {
   "name": "md2bb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "steam-bbcode written by markdown like syntax",
   "main": "./index.js",
   "scripts": {

@@ -106,23 +106,23 @@ var Md2bb = function (_Parser) {
 
     _this.setRules([{
       name: 'bold',
-      regex: /(\*\*)(.*?)\1/g,
-      replacement: '[b]$2[/b]'
+      regex: /\*\*(.*?)\*\*/g,
+      replacement: '[b]$1[/b]'
     }, {
       name: 'italic',
-      regex: /(\*)(.*?)\1/g,
-      replacement: '[i]$2[/i]'
+      regex: /\*(.*?)\*/g,
+      replacement: '[i]$1[/i]'
     }, {
       name: 'under_line',
-      regex: /(\_)(.*?)\1/g,
-      replacement: '[u]$2[/u]'
+      regex: /\_(.*?)\_/g,
+      replacement: '[u]$1[/u]'
     }, {
       name: 'spoiler',
-      regex: /\~\~(.*?)\~\~/g,
+      regex: /~~((.|\n)*?)~~/g,
       replacement: '[spoiler]$1[/spoiler]'
     }, {
       name: 'strike',
-      regex: /\~{1}(.*?)\~{1}/g, // TODO: 2個以上並んだ記号にもマッチするので直す必要あり
+      regex: /~(.*?)~/g,
       replacement: '[strike]$1[/strike]'
     }, {
       name: 'header',
@@ -134,39 +134,39 @@ var Md2bb = function (_Parser) {
       replacement: "[url=$2]$1[/url]"
     }, {
       name: 'noparse',
-      regex: /``(.*?)``/g,
+      regex: /``((.|\n)*?)``/g,
       replacement: '[noparse]$1[/noparse]'
     }, {
       name: 'code',
-      regex: /`(.*?)`{1}/g, // TODO: 2個以上並んだ記号にもマッチするので直す必要あり
+      regex: /`((.|\n)*?)`/g,
       replacement: '[code]$1[/code]'
     }, {
       name: 'quote',
       regex: /(\n|^)\>[ ](.*)/g,
-      replacement: '[quote]$2[/quote]'
+      replacement: '$1[quote]$2[/quote]'
     }, {
       name: 'quote_with_author',
       regex: /(\n|^)\>\[(.*)\][ ](.*)/g,
-      replacement: '[quote=$2]$3[/quote]'
+      replacement: '$1[quote=$2]$3[/quote]'
     }, {
       name: 'quote_fix',
-      regex: /\[\/quote\]\[quote\]/,
+      regex: /\[\/quote\]\n\[quote\]/,
       replacement: "\n"
     }, {
       name: 'ol_list',
       regex: /(\n|^)[ ]*[0-9]+\.[ ](.*)/g,
-      replacement: '[olist]\n[*]$2\n[/olist]'
+      replacement: '$1[olist]\n[*]$2\n[/olist]'
     }, {
       name: 'ol_list_fix',
-      regex: /\n\[\/olist\][ ]?\[olist\]/g,
+      regex: /\n\[\/olist\]\n\[olist\]/g,
       replacement: ''
     }, {
       name: 'ulist',
       regex: /(\n|^)[ ]*[\*\-\+][ ](.*)/g,
-      replacement: '[ulist]\n[*]$2\n[/ulist]'
+      replacement: '$1[ulist]\n[*]$2\n[/ulist]'
     }, {
       name: 'ul_list_fix',
-      regex: /\n\[\/ulist\][ ]?\[ulist\]/g,
+      regex: /\n\[\/ulist\]\n\[ulist\]/g,
       replacement: ''
     }]);
     return _this;
